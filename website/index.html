@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Library</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top-navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">SMART LIBRARY</div>
+        <div>
+            <a href="#" class="nav-link d-inline">Home</a>
+            <a href="categories.html" class="nav-link d-inline">Categories</a>
+            <a href="about.html" class="nav-link d-inline">About Us</a>
+            <a href="#books" class="nav-link d-inline">Books</a>
+        </div>
+        <div>📞 +1234678</div>
+    </div>
+</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Smart Library</h1>
+        <p>Explore and Read Books Online</p>
+        <a href="#books" class="btn-custom">Explore Books</a>
+    </div>
+</section>
+<section id="books" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Books Collection</h2>
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card book-card shadow-sm">
+                    <img src="images/book1.jpg" alt="Book Image">
+                    <div class="card-body text-center">
+                        <h6>Three men in boat</h6>
+                        <button class="btn btn-order mt-2" onclick="openOrder('Comedy Book')">Order Book</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card book-card shadow-sm">
+                    <img src="images/book2.jpg" alt="Book Image">
+                    <div class="card-body text-center">
+                        <h6>Our Adventure Books</h6>
+                        <button class="btn btn-order mt-2" onclick="openOrder('Adventure Book')">Order Book</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card book-card shadow-sm">
+                    <img src="images/book3.jpg" alt="Book Image">
+                    <div class="card-body text-center">
+                        <h6>The Hatchet</h6>
+                        <button class="btn btn-order mt-2" onclick="openOrder('Fiction Book')">Order Book</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card book-card shadow-sm">
+                    <img src="images/book4.jpg" alt="Book Image">
+                    <div class="card-body text-center">
+                        <h6>Riyad-us-Saliheen</h6>
+                        <button class="btn btn-order mt-2" onclick="openOrder('Islamic Book')">Order Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div id="orderModal" class="modal-custom">
+    <div class="modal-box">
+        <h5>Order Book</h5>
+        <p id="bookName"></p>
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="address" placeholder="Your Address">
+        <button class="btn btn-dark w-100 mt-2" onclick="placeOrder()">Confirm Order</button>
+        <button class="btn btn-light w-100 mt-2" onclick="closeOrder()">Cancel</button>
+    </div>
+</div>
+<script>
+let selectedBook = "";
+function openOrder(book) {
+    selectedBook = book;
+    document.getElementById("bookName").innerText = "Book: " + book;
+    document.getElementById("orderModal").style.display = "flex";
+}
+function closeOrder() {
+    document.getElementById("orderModal").style.display = "none";
+}
+function placeOrder() {
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+    if(name === "" || address === "") {
+        alert("Please fill all fields");
+        return;
+    }
+    alert("Order placed successfully for " + selectedBook);
+    document.getElementById("orderModal").style.display = "none";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+}
+</script>
+</body>
+</html>  

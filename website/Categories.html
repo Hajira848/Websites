@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categories - Smart Library</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="category-page">
+<div class="header">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a href="index.html" class="text-white text-decoration-none fw-bold">← Back</a>
+    <h4>Book Categories</h4>
+    <div></div>
+  </div>
+</div>
+<div class="container py-4">
+  <div class="row g-3 text-center">
+    <div class="col-6 col-md-3">
+      <div class="cat-box" onclick="showCategory('comedy')">Comedy</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="cat-box" onclick="showCategory('adventure')">Adventure</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="cat-box" onclick="showCategory('fiction')">Fiction</div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="cat-box" onclick="showCategory('islamic')">Islamic</div>
+    </div>
+  </div>
+</div>
+<div class="container py-4">
+  <h4 id="title" class="text-center mb-4">Select a Category</h4>
+  <div class="row g-4" id="bookSection">
+    <div class="col-12 col-sm-6 col-md-4 book comedy hidden">
+      <div class="card book-card">
+        <img src="images/book5.jpg" alt="Book Image">
+        <div class="card-body text-center">
+          <h6>Funny Comedy Book</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 book adventure hidden">
+      <div class="card book-card">
+        <img src="images/book6.jpg" alt="Book Image">
+        <div class="card-body text-center">
+          <h6>Adventure World</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 book fiction hidden">
+      <div class="card book-card">
+        <img src="images/book7.jpg" alt="Book Image">
+        <div class="card-body text-center">
+          <h6>Mystery Fiction Book</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 book islamic hidden">
+      <div class="card book-card">
+        <img src="images/book8.jpg" alt="Book Image">
+        <div class="card-body text-center">
+          <h6>Islamic Teachings</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function showCategory(category) {
+  let books = document.querySelectorAll(".book");
+  let title = document.getElementById("title");
+  books.forEach(book => {
+    book.classList.add("hidden");
+  });
+  document.querySelectorAll("." + category).forEach(book => {
+    book.classList.remove("hidden");
+  });
+  title.innerText = category.toUpperCase() + " BOOKS";
+}
+</script>
+</body>
+</html>  

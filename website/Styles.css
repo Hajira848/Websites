@@ -1,0 +1,228 @@
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; 
+} 
+html, body { 
+height: 100%; 
+} 
+body { 
+font-family: Arial, 'Segoe UI', Tahoma, sans-serif; 
+background: #fff; 
+color: #000; 
+min-height: 100vh; 
+} 
+body.category-page { 
+background: url('images/image10.jpg') no-repeat center center fixed !important; 
+background-size: cover !important; 
+color: #fff !important; 
+} 
+body.about-page { 
+background: url('images/image11.jpg') no-repeat center center fixed !important; 
+background-size: cover !important; 
+color: #fff !important; 
+} 
+.hidden { 
+display: none !important; 
+} 
+/* ================ INDEX.HTML STYLES ================ */ 
+.top-navbar { 
+background: white; 
+padding: 10px 0; 
+border-bottom: 1px solid #ddd; 
+} 
+.logo { 
+font-weight: bold; 
+font-size: 22px; 
+color: black; 
+} 
+.nav-link { 
+color: black !important; 
+margin: 0 10px; 
+font-weight: 500; 
+} 
+.hero { 
+height: 100vh; 
+background: url('images/image9.jpg') center/cover no-repeat; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+position: relative; 
+} 
+.hero::before { 
+content: ""; 
+position: absolute; 
+width: 100%; 
+height: 100%; 
+background: rgba(52, 51, 51, 0.65); 
+} 
+.hero-content { position: relative; 
+text-align: center; 
+color: white; 
+} 
+.hero h1 { 
+font-size: 55px; font-weight: bold; 
+} 
+.btn-custom { background: black; 
+color: white; 
+padding: 12px 25px; 
+border-radius: 30px; 
+text-decoration: none; 
+transition: 0.3s; 
+display: inline-block; 
+margin-top: 15px; 
+border: none; 
+} 
+.btn-custom:hover { 
+background: rgb(249, 247, 247); 
+color: rgb(14, 13, 13); 
+} 
+.btn-order { 
+background: rgb(17, 17, 17); 
+color: rgb(242, 237, 237); 
+width: 100%; 
+border-radius: 20px; 
+border: none; 
+} 
+.btn-order:hover { 
+background: #f7f3f3; 
+} 
+.modal-custom { 
+display: none; 
+position: fixed; 
+top: 0; 
+left: 0; 
+width: 100%; 
+height: 100%; 
+background: rgba(0,0,0,0.6); 
+justify-content: center; 
+align-items: center; 
+z-index: 9999; 
+} 
+.modal-box { 
+background: white; 
+padding: 20px; 
+width: 320px; 
+border-radius: 10px; 
+text-align: center; 
+color: black; 
+} 
+.modal-box input { 
+width: 100%; 
+margin: 5px 0; 
+padding: 8px; 
+border: 1px solid #ddd; 
+border-radius: 5px; 
+} 
+/* ================ CATEGORIES.HTML STYLES ================ */ 
+.header { 
+background: rgb(40, 39, 39); 
+backdrop-filter: blur(10px); 
+padding: 15px; 
+border-bottom: 1px solid rgba(255,255,255,0.1); 
+} 
+.header h4 { 
+color: white; 
+text-shadow: 2px 4px rgba(0,0,0,0.8); 
+margin: 0; 
+} 
+.cat-box { 
+background: rgba(4, 4, 4, 0.7); backdrop-filter: blur(8px); 
+color: white; 
+padding: 35px; 
+border-radius: 10px; 
+cursor: pointer; 
+transition: 0.3s; 
+text-align: center; 
+border: 1px solid rgba(11, 10, 10, 0.2); 
+} 
+.cat-box:hover { 
+background: rgba(143, 142, 142, 0.9); 
+transform: scale(1.05); 
+box-shadow: 0 0 20px rgba(254, 254, 254, 0.897); 
+} 
+#title { 
+font-weight: bold; 
+color: rgb(251, 249, 249); 
+text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
+} 
+/* ================ ABOUT.HTML STYLES ================ */ 
+.about-hero { 
+height: 100vh; 
+position: relative; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+} 
+.about-hero::before { 
+content: ""; 
+position: absolute; 
+width: 100%; 
+height: 100%; 
+background: 
+rgba(48, 48, 48, 0.65); 
+} 
+.about-content { 
+position: relative; 
+text-align: center; 
+max-width: 800px; 
+padding: 20px; 
+} 
+.about-content h1 { 
+font-size: 50px; 
+font-weight: bold; 
+margin-bottom: 20px; 
+} 
+.about-content p { 
+font-size: 18px; 
+line-height: 1.8; 
+color: #ffffff; 
+} 
+.book-card { 
+border: none; 
+border-radius: 12px; 
+overflow: hidden; 
+transition: 0.3s; 
+background: #fff; 
+box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+} 
+.category-page .book-card, 
+.about-page .book-card { 
+background: #111; 
+box-shadow: none; 
+} 
+.book-card:hover { 
+transform: translateY(-8px); 
+} 
+.book-card img { 
+height: 200px; 
+width: 100%; 
+object-fit: cover; 
+} 
+.book-card .card-body { 
+padding: 15px; 
+} 
+.book-card h6 { 
+color: #000; 
+font-weight: 600; 
+margin-bottom: 5px; 
+font-size: 15px; 
+} 
+.category-page .book-card h6, 
+.about-page .book-card h6 { 
+color: #fff; 
+} 
+@media (max-width: 768px) { 
+.hero h1, .about-content h1 { 
+font-size: 32px; 
+} 
+.hero { 
+height: 70vh; 
+} 
+.book-card img { 
+height: 180px; 
+} 
+.about-content p { 
+font-size: 16px; 
+} 
+}  
